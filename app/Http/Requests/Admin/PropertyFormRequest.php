@@ -22,7 +22,7 @@ class PropertyFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'min:8'],
+            'title' => ['required', 'min:3'],
             'description' => ['required', 'min:8'],
             'surface' => ['required', 'integer', 'min:10'],
             'rooms' => ['required', 'integer', 'min:1'],
@@ -33,6 +33,7 @@ class PropertyFormRequest extends FormRequest
             'address' => ['required', 'min:8'],
             'postal_code' => ['required', 'min:3'],
             'sold' => ['required', 'boolean'],
+            'options' => ['array', 'exists:options,id', 'required']
         ];
     }
 }

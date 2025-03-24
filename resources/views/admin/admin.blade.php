@@ -24,26 +24,31 @@
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><strong>LaravBlog</strong></a>
+            <a class="navbar-brand" href="/"><strong>Agence</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            @php
+                $route = request()->route()->getName();
+            @endphp
+
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    {{-- Liens de navitation --}}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                        <a @class(['nav-link', 'active' => str_contains($route, 'property.')]) aria-current="page"
+                            href="{{ route('admin.property.index') }}">Gérer les biens
+                        </a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a @class(['nav-link', 'active' => str_starts_with($routeName, 'blog.')]) aria-current="page" href="{{ route('blog.index') }}">Accueil</a>
-                    </li> --}}
-                    {{-- <li class="nav-item">
-                        <a @class([
-                            'nav-link',
-                            'active' => str_starts_with($routeName, 'blog.create'),
-                        ]) aria-current="page" href="{{ route('blog.create') }}">Créer un
-                            article</a>
-                    </li> --}}
+
+                    <li class="nav-item">
+                        <a @class(['nav-link', 'active' => str_contains($route, 'option.')]) aria-current="page"
+                            href="{{ route('admin.option.index') }}">Gérer les options
+                        </a>
+                    </li>
                 </ul>
 
                 <div class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -89,7 +94,7 @@
 
         @if (session('success'))
             <div class="alert alert-success">
-                {{session('success')}}
+                {{ session('success') }}
             </div>
         @endif
 
