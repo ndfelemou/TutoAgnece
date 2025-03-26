@@ -95,12 +95,7 @@
     </nav>
 
     <div class="container mt-2">
-
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
+        @include('shared.flash')
 
         @yield('content')
     </div>

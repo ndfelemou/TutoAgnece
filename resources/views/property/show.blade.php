@@ -14,7 +14,9 @@
         <div class="mt-4">
             <h4>Interesser par ce bien ?</h4>
 
-            <form action="" method="post" class="vstack gap-3">
+            @include('shared.flash')
+
+            <form action="{{ route('property.contact', $property) }}" method="post" class="vstack gap-3">
                 @csrf
 
                 <div class="row">
@@ -23,7 +25,11 @@
                         'name' => 'firstname',
                         'label' => 'Prénom',
                     ])
-                    @include('shared.input', ['class' => 'col', 'name' => 'lastname', 'label' => 'Nom'])
+                    @include('shared.input', [
+                        'class' => 'col',
+                        'name' => 'lastname',
+                        'label' => 'Nom',
+                    ])
                 </div>
                 <div class="row">
                     @include('shared.input', [
@@ -46,9 +52,10 @@
                 ])
 
                 <div>
-                    <button type="submit" class="btn  btn-outline-primary rounded-0">NOUS CONTACTER</button>
+                    <button type="submit" class="btn  btn-primary rounded-0">NOUS CONTACTER</button>
                 </div>
             </form>
+
         </div>
 
         <div class="mt-4">
