@@ -57,37 +57,29 @@
 
                 <div class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="btn btn-sm btn-dark" href="#">S'inscrire </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="btn btn-sm btn-success " href="#" style="margin-left: 5px">Se connecter</a>
-                        </li>
-
-                        {{-- @auth
+                        @auth
                             <li class="nav-item">
                                 <span class="nav-link active">{{ Auth::user()->name }}</span>
                             </li>
 
-                            <form action="{{ route('auth.logout') }}" method="post" class="nav-item">
+                            <form action="{{ route('logout') }}" method="post" class="nav-item">
                                 @method('delete')
                                 @csrf
 
                                 <button type="submit" class="btn btn-sm btn-danger">Se deconnecer</button>
                             </form>
-                        @endauth --}}
+                        @endauth
 
-                        {{-- @guest
+                        @guest
                             <li class="nav-item">
-                                <a class="btn btn-sm btn-dark" href="{{ route('auth.register') }}">S'inscrire </a>
+                                <a class="btn btn-sm btn-dark" href="{{ route('register') }}">S'inscrire </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="btn btn-sm btn-success " href="{{ route('auth.login') }}"
+                                <a class="btn btn-sm btn-success " href="{{ route('login') }}"
                                     style="margin-left: 5px">Se connecter</a>
                             </li>
-                        @endguest --}}
+                        @endguest
                     </ul>
                 </div>
             </div>
