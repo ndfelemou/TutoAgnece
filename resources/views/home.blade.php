@@ -1,7 +1,12 @@
 @extends('base')
 @section('title', 'Accueil')
 @section('content')
-    <div class="bg-light p-5 mb-5 text-center">
+    {{-- <x-alert type="info" id="test" class="fw-bold">
+        Des informations
+    </x-alert> --}}
+
+    <div class="bg-light p-5 mb-5 text-center mt-5">
+
         <div class="container">
             <h1>Agence lorem ipsum</h1>
             <p>

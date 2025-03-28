@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- Bootstrap - Icons links --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{ asset('assets/main.css') }}">
@@ -15,11 +15,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> --}}
 
     {{-- Tom select --}}
-    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.4.3/dist/css/tom-select.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.4.3/dist/js/tom-select.complete.min.js"></script>
+    {{-- <link href="https://cdn.jsdelivr.net/npm/tom-select@2.4.3/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.4.3/dist/js/tom-select.complete.min.js"></script> --}}
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>@yield('title') | Administration</title>
 </head>
@@ -76,8 +78,8 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="btn btn-sm btn-success " href="{{ route('login') }}"
-                                    style="margin-left: 5px">Se connecter</a>
+                                <a class="btn btn-sm btn-success " href="{{ route('login') }}" style="margin-left: 5px">Se
+                                    connecter</a>
                             </li>
                         @endguest
                     </ul>
@@ -86,7 +88,7 @@
         </div>
     </nav>
 
-    <div class="container mt-2">
+    <div class="container mt-5">
         @include('shared.flash')
 
         @yield('content')
@@ -96,14 +98,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-
+    {{--
     <script>
         new TomSelect('select[multiple]', {
-            plugins: remove_button: {
+            plugins: remove_button = {
                 title: 'Supprimer'
             }
         });
-    </script>
+    </script> --}}
 </body>
 
 </html>

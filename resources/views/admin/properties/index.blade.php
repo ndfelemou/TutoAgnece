@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between align-items-center">
         <h2 class="mb-4">@yield('title')</h2>
 
-        <a href="{{ route('admin.property.create') }}" class="btn btn-sm btn-primary">
+        <a href="{{ route('admin.property.create') }}" class="btn btn-sm btn-primary" id="adminBtnAddProperty">
             Ajouter un bien <i class="bi bi-plus"></i>
         </a>
     </div>
