@@ -6,7 +6,7 @@
             </a>
             <hr>
             @if ($property->sold == 0)
-                <small class="mt-1 text-success">Disponible</small>
+                <small class="text-success fw-bold" style="font-size: 13px; font-style: italic">Disponible</small>
             @else
                 <small class="mt-1 text-danger">Vendu</small>
             @endif
